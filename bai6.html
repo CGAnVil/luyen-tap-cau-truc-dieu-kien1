@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="sales" placeholder="Nhập doanh số USD">
+<button onclick="check()">Kiểm tra</button>
+<p id="commision"></p>
+
+<script>
+    // Công thức tính hoa hồng
+    // Doanh số trên 10,000 : 2% doanh số
+    // Doanh số trên 25,000 : 3% doanh số
+    // Doanh số trên 50,000 : 4% doanh số
+    // Doanh số trên 100,000: 7% doanh số
+
+    function check() {
+        let sales = parseFloat(document.getElementById('sales').value)
+        let commision;
+        if (sales >= 100000) {
+            commision = sales * 0.07
+            alert('Hoa hồng bạn nhận được là ' + commision)
+        } else if (sales >= 50000) {
+            commision = sales * 0.04
+            alert('Hoa hồng bạn nhận được là ' + commision)
+        } else if (sales >= 25000) {
+            commision = sales * 0.03
+            alert('Hoa hồng bạn nhận được là ' + commision)
+        } else if (sales >= 10000) {
+            commision = sales * 0.02
+            alert('Hoa hồng bạn nhận được là ' + commision)
+        } else {
+            alert('Bạn chưa đạt đủ doanh số để nhận hoa hồng')
+        }
+    }
+</script>
+</body>
+</html>

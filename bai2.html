@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="age" placeholder="Nhập tuổi">
+<button onclick="check()">Kiểm tra</button>
+<script>
+    function check() {
+        let a = parseInt(document.getElementById('age').value)
+        if (a >= 16) {
+            if (a <=18){
+                alert('Đủ tuổi học lớp 10')
+            }else {
+                alert('Quá tuổi học cấp 3 roài, đi học nghề hoặc đi làm đê')
+            }
+        }else {
+            alert('Chưa đủ tuổi học lớp 10')
+        }
+    }
+</script>
+</body>
+</html>

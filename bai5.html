@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="diemKT" placeholder="Nhập điểm bài kiểm tra">
+<input type="text" id="diemGiuaky" placeholder="Nhập điểm bài giua ky">
+<input type="text" id="diemCuoiky" placeholder="Nhập điểm bài cuoi ky">
+<button onclick="check()">Kết quả</button>
+
+<script>
+    <!--    Công thức áp dụng-->
+    // Điểm trung bình = 20% điểm kiểm tra, 30% điểm giữa kỳ, 50% điểm cuối kỳ
+    // Điểm trung bình trên 9.0 xuất sắc
+    // Điểm trung bình trên 8.0 giỏi
+    // Điểm trung bình trên 6.5 khá
+    // Điểm trung bình trên 4.5 trung bình
+    // Điểm trung bình trên 3.0 yếu
+    // Điểm trung bình dưới 3.0 hoặc 1 bài kiểm tra bị 0 là trượt
+
+    function check() {
+        let diemKT = parseFloat(document.getElementById('diemKT').value)
+        let diemGK = parseFloat(document.getElementById('diemGiuaky').value)
+        let diemCK = parseFloat(document.getElementById('diemCuoiky').value)
+        let diemTB = (diemKT * 0.2) + (diemGK * 0.3) + (diemCK * 0.5)
+
+        if (diemTB < 3 || diemKT == 0 || diemGK == 0 || diemCK == 0) {
+            alert('Toạch!!! Học lại')
+        } else if (diemTB < 4.5) {
+            alert('Điểm trung bình là ' + diemTB + ' Học lực yếu')
+        } else if (diemTB < 6.5) {
+            alert('Điểm trung bình là ' + diemTB + ' Học lực trung bình')
+        } else if (diemTB < 8.0) {
+            alert('Điểm trung bình là ' + diemTB + ' Học lực khá')
+        } else if (diemTB < 9.0) {
+            alert('Điểm trung bình là ' + diemTB + ' Học lực Giỏi')
+        } else {
+            alert('Điểm trung bình là ' + diemTB + ' Học lực Xuất sắc')
+        }
+    }
+</script>
+</body>
+</html>

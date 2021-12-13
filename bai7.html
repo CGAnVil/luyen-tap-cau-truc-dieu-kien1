@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="quantity" placeholder="'Số điện thoại sử dụng">
+<button onclick="check()">Kiểm tra</button>
+
+<script>
+//Công thức tính cước
+//Số lượng dưới 50 : đơn giá 12.000
+//Số lượng từ 50 -70 : đơn giá 13.000
+//Số lượng 70-100: đơn giá 15.000
+//Số lượng 100-200: đơn giá 18.000
+//Số lượng trên 200:đơn giá 24.000
+
+function check(){
+    let quantity = parseFloat(document.getElementById('quantity').value)
+
+    if (quantity < 50) {
+        let unitPrice = 12000
+        let totalPrice = quantity * unitPrice
+        alert(totalPrice)
+    }else if (quantity < 70){
+        let unitPrice = 13000
+        let totalPrice = quantity * unitPrice
+        alert(totalPrice)
+    }else if (quantity < 100){
+        let unitPrice = 15000
+        let totalPrice = quantity * unitPrice
+        alert(totalPrice)
+    }else if (quantity < 200){
+        let unitPrice = 18000
+        let totalPrice = quantity * unitPrice
+        alert(totalPrice)
+    }else {
+        let unitPrice = 24000
+        let totalPrice = quantity * unitPrice
+        alert(totalPrice)
+    }
+}
+</script>
+</body>
+</html>
